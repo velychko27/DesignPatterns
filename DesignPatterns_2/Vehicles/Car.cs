@@ -11,8 +11,6 @@ namespace DesignPatterns.Vehicles
             Console.WriteLine($"Car has been built.");
         }
 
-        public override int GetPrice() => 23770;
-
         public override void Drive()
         {
             Movable.Drive();

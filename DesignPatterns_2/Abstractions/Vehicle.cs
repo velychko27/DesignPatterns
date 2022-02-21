@@ -9,8 +9,6 @@ namespace DesignPatterns.Abstractions
         public double EngineCapacity { get; set; }
         public string Transmission { get; set; }
 
-        public abstract int GetPrice();
-
         public abstract void Drive();
 
         public Vehicle(int maxSpeed, double engineCapacity, string transmission)

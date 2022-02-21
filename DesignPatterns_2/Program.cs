@@ -1,6 +1,5 @@
 ﻿using DesignPatterns.Factorys;
 using DesignPatterns.Moves;
-using DesignPatterns_2.Vehicles;
 using System;
 
 namespace DesignPatterns_2
@@ -11,14 +10,17 @@ namespace DesignPatterns_2
         {
             var mercedesFactory = new AutomobileFactory("Mercedes-Benz");
             var car = mercedesFactory.BuildVehicle(320, 2.5, "Automate");
-            Console.WriteLine($"The price is: {car.GetPrice()}");
-
-            car = new CarFullSet(car);
-            Console.WriteLine($"The price is: {car.GetPrice()}");
-
             car.Drive();
-            car.Movable = new GasolineMove();
+            car.Movable = new ElectricMove();
             car.Drive();
+
+            Console.WriteLine();
+
+            var volvoCarsFactory = new CargoTruckFactory("Volvo Cars");
+            var truck = volvoCarsFactory.BuildVehicle(250, 4.5, "Automate");
+            truck.Drive();
+            truck.Movable = new GasolineMove();
+            truck.Drive();
         }
     }
 }
